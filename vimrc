@@ -1,6 +1,9 @@
-﻿set nocompatible              " be iMproved, required
+﻿" Hawmps vimrc, cheers to @Wolfy87 for inspriation
+set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" make sure vundle is properly installed. Follow instructions
+" here: https://github.com/gmarik/Vundle.vim
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -12,7 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
+" tpopes Git wrapper
 Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'moll/vim-node'
@@ -70,12 +73,14 @@ let g:syntastic_check_on_open=1
 set shiftwidth=4
 set tabstop=4
 map Y y$
+" Keymapping to clear search highlights
 nnoremap <C-L> :nohl<CR><C-L>
 syntax on 
 set background=dark
 colorscheme solarized
 set statusline=%<%F\ %y\ %{fugitive#statusline()}\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 " Custom key mappings
+" Ctrl-C breaks a line. 
 imap <C-c> <CR><Esc>O
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
